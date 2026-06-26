@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Encryption Key Hidden Here -->
+    <meta name="encryption-key-hint" content="SecretKey1234567890123456789012">
+    <title>QR Code Secret Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> QR Code Secret Challenge</h1>
+        
+        <!-- QR Code Display -->
+        <div class="qr-container">
+            <h2> Scan This Auto-Generated QR Code</h2>
+            <div id="qr-code" class="qr-box">
+                <p class="loading">⏳ Generating QR code...</p>
+            </div>
+            <p class="small-text">Fresh QR code generated each time!</p>
+        </div>
+
+        <!-- Decryption Tool -->
+        <div class="decrypt-box">
+            <h2> Decryption Tool</h2>
+            <form id="decrypt-form">
+                <label for="encrypted-msg">Encrypted Message (from QR):</label>
+                <textarea id="encrypted-msg" placeholder="Paste the decoded QR content here (remove the IV part)" rows="3"></textarea>
+                
+                <label for="encryption-key">Encryption Key:</label>
+                <input type="text" id="encryption-key" placeholder="Find this hidden on the page">
+                
+                <label for="iv">IV (Initialization Vector):</label>
+                <input type="text" id="iv" placeholder="InitializationVe" value="InitializationVe">
+                
+                <button type="submit" class="btn"> Decrypt</button>
+            </form>
+            
+            <div id="result" class="result-box" style="display:none;">
+                <h3> Decrypted Message:</h3>
+                <p id="decrypted-text"></p>
+                <p id="flag" class="flag"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HTML Comment with Key Hint -->
+    <!--  ENCRYPTION_KEY: SecretKey1234567890123456789012 (Find me!) -->
+
+    <script src="script.js"></script>
+</body>
+</html>
